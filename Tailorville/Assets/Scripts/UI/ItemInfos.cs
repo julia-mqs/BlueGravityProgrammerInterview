@@ -7,8 +7,11 @@ public class ItemInfos : MonoBehaviour
 {
     #region Variables
 
+    [SerializeField] private Button _button;
+    [Space]
     [SerializeField] private ItemData _itemData;
     [SerializeField] private Image _itemSprite;
+    [SerializeField] private GameObject _redOverlay;
     [SerializeField] private GameObject _goldCoin;
     [SerializeField] private Text _goldCost;
 
@@ -34,6 +37,17 @@ public class ItemInfos : MonoBehaviour
     {
         _itemSprite.sprite = _itemData.ItemSprite;
 
+        if (MenusManager.setActiveMenu == ActiveMenu.Store)
+            UpdateStoreInfos();
+        else
+            UpdateWardrobeInfos();
+    }
+
+    private void UpdateStoreInfos()
+    {
+        //initially...
+        _redOverlay.SetActive(false);
+
         if (_itemData.ItemUnlocked == false)
         {
             _goldCoin.SetActive(true);
@@ -46,10 +60,32 @@ public class ItemInfos : MonoBehaviour
         }
     }
 
+    private void UpdateWardrobeInfos()
+    {
+        _goldCoin.SetActive(false);
+
+        if (_itemData.ItemUnlocked == false)
+        {
+            _redOverlay.SetActive(true);
+            _goldCost.text = "LOCKED";
+        }
+        else
+        {
+            _redOverlay.SetActive(false);
+            _goldCost.text = "";
+        }
+    }
+
     private void Nullchecks()
     {
+        if (_button == null)
+            Debug.Log("Button object is empty in: " + this.gameObject);
+
         if (_itemData == null)
-            Debug.Log("Item Data is empty in: " + this.gameObject);
+            Debug.Log("Item Data object is empty in: " + this.gameObject);
+
+        if (_redOverlay == null)
+            Debug.Log("Red Overlay object is empty in: " + this.gameObject);
 
         if (_itemSprite == null)
             Debug.Log("Item Sprite object is empty in: " + this.gameObject);

@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     #region Variables
-    
+
     [SerializeField] private GameObject _rogueGO;
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private Animator _animator;
@@ -21,8 +21,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _screenPosition;
     private bool _flippedLeft = false;
 
-    public static GameMode setGameMode;
-
     #endregion
 
     #region Messages
@@ -30,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         _camera = Camera.main;
-        setGameMode = GameMode.Playing;
 
         Nullchecks();
     }
@@ -40,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         if (_rigidbody == null)
             return;
 
-        if (setGameMode != GameMode.Playing)
+        if (MenusManager.setGameMode != GameMode.Playing)
             _playerMovement = Vector2.zero;
 
         _rigidbody.velocity = _playerMovement * _playerSpeed;
@@ -56,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnMove(InputValue inputValue)
     {
-        if (setGameMode != GameMode.Playing)
+        if (MenusManager.setGameMode != GameMode.Playing)
         {
             _playerMovement = Vector2.zero;
             return;
@@ -124,13 +121,3 @@ public class PlayerMovement : MonoBehaviour
 
     #endregion
 }
-
-#region Enum
-
-public enum GameMode
-{
-    Playing,
-    InMenu
-}
-
-#endregion

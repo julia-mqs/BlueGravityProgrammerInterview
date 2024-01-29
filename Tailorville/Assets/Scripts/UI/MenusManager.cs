@@ -13,6 +13,9 @@ public class MenusManager : MonoBehaviour
     [SerializeField] private GameObject _inputHUD;
     [SerializeField] private Text _inputText;
 
+    public static GameMode setGameMode { get; private set; }
+    public static ActiveMenu setActiveMenu { get; private set; }
+
     #endregion
 
     #region Messages
@@ -20,6 +23,7 @@ public class MenusManager : MonoBehaviour
     private void Awake()
     {
         Nullchecks();
+        setGameMode = GameMode.Playing;
 
         DeactivateAllGameMenus();
         DeactivateInputHUD();
@@ -46,11 +50,17 @@ public class MenusManager : MonoBehaviour
     internal void OpenMenu(MenuTypeEnum menu)
     {
         if (menu == MenuTypeEnum.Store)
+        {
             ActivateGameObject(_storeMenu);
+            setActiveMenu = ActiveMenu.Store;
+        }
         else
+        {
             ActivateGameObject(_wardrobeMenu);
+            setActiveMenu = ActiveMenu.Wardrobe;
+        }
 
-        PlayerMovement.setGameMode = GameMode.InMenu;
+        setGameMode = GameMode.InMenu;
     }
 
     private void ActivateGameObject(GameObject theObject)
@@ -70,7 +80,7 @@ public class MenusManager : MonoBehaviour
         DeactivateGameObject(_storeMenu);
         DeactivateGameObject(_wardrobeMenu);
 
-        PlayerMovement.setGameMode = GameMode.Playing;
+        setGameMode = GameMode.Playing;
     }
 
     internal void DeactivateInputHUD()
@@ -95,3 +105,19 @@ public class MenusManager : MonoBehaviour
 
     #endregion
 }
+
+#region Enums
+
+public enum ActiveMenu
+{
+    Store,
+    Wardrobe
+}
+
+public enum GameMode
+{
+    Playing,
+    InMenu
+}
+
+#endregion

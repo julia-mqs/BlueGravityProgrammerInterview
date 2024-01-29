@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemCost: 500
   _itemSprite: {fileID: 21300000, guid: 468244f274f38f64b85773c7888444b6, type: 3}
-  _itemUnlocked: 0
+  _itemUnlocked: 1
