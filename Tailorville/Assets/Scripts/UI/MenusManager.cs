@@ -81,16 +81,16 @@ public class MenusManager : MonoBehaviour
     private void Nullchecks()
     {
         if (_storeMenu == null)
-            Debug.Log("Store Menu obeject is empty in: " + this.gameObject);
+            Debug.Log("Store Menu object is empty in: " + this.gameObject);
 
         if (_wardrobeMenu == null)
-            Debug.Log("Wardrobe Menu obeject is empty in: " + this.gameObject);
+            Debug.Log("Wardrobe Menu object is empty in: " + this.gameObject);
 
         if (_inputHUD == null)
-            Debug.Log("Input HUD obeject is empty in: " + this.gameObject);
+            Debug.Log("Input HUD object is empty in: " + this.gameObject);
 
         if (_inputText == null)
-            Debug.Log("Input Text obeject is empty in: " + this.gameObject);
+            Debug.Log("Input Text object is empty in: " + this.gameObject);
     }
 
     #endregion
