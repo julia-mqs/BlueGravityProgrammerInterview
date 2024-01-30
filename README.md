@@ -1,1 +1,1 @@
-Unity Project, Build and PDF document are located within "Tailorville" folder.
+Unity Project, Build and PDF (Interview Task Document) are located within "Tailorville" folder.
