@@ -1066,6 +1066,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1847181710}
+  - component: {fileID: 1847181711}
   m_Layer: 0
   m_Name: Items
   m_TagString: Untagged
@@ -1093,6 +1094,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1847181711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847181709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63da6632fc45fa540a05975ade5666ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _allPlayerItems:
+  - {fileID: 11400000, guid: b86a27714727015489f0f84dd00684bf, type: 2}
+  - {fileID: 11400000, guid: a6ba197419ff32341b4c5d791bb6efc2, type: 2}
+  - {fileID: 11400000, guid: 791a58d27e7398a4394be456c29ced7c, type: 2}
+  - {fileID: 11400000, guid: 482252ea6ec0f6f409573cfc39c6674d, type: 2}
+  - {fileID: 11400000, guid: 81fb5f7bc3196f140a23d701aaa4b083, type: 2}
+  - {fileID: 11400000, guid: 95ff8de4778b2f84ab25cc119a59bc84, type: 2}
+  - {fileID: 11400000, guid: 68768cf3a77e3de4a890f064ca50b2bb, type: 2}
+  - {fileID: 11400000, guid: 25e7c40e6ce935f4fbec275749efa0bd, type: 2}
+  - {fileID: 11400000, guid: d6fc3dc753f6b3646bcb09370a592007, type: 2}
 --- !u!1 &1910506388
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,10 +1388,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 609369395248703594, guid: db130c0141ed88c448ab93666d596311, type: 3}
+      propertyPath: _moneySystem
+      value: 
+      objectReference: {fileID: 723621677}
+    - target: {fileID: 797622111426567143, guid: db130c0141ed88c448ab93666d596311, type: 3}
+      propertyPath: _moneySystem
+      value: 
+      objectReference: {fileID: 723621677}
+    - target: {fileID: 1272516985502006405, guid: db130c0141ed88c448ab93666d596311, type: 3}
+      propertyPath: _moneySystem
+      value: 
+      objectReference: {fileID: 723621677}
+    - target: {fileID: 1660445213956077289, guid: db130c0141ed88c448ab93666d596311, type: 3}
+      propertyPath: _moneySystem
+      value: 
+      objectReference: {fileID: 723621677}
+    - target: {fileID: 1676710882080172175, guid: db130c0141ed88c448ab93666d596311, type: 3}
+      propertyPath: _moneySystem
+      value: 
+      objectReference: {fileID: 723621677}
+    - target: {fileID: 3155194894376910741, guid: db130c0141ed88c448ab93666d596311, type: 3}
+      propertyPath: _moneySystem
+      value: 
+      objectReference: {fileID: 723621677}
+    - target: {fileID: 3335064326081604902, guid: db130c0141ed88c448ab93666d596311, type: 3}
+      propertyPath: _moneySystem
+      value: 
+      objectReference: {fileID: 723621677}
+    - target: {fileID: 3607434390870940144, guid: db130c0141ed88c448ab93666d596311, type: 3}
+      propertyPath: _moneySystem
+      value: 
+      objectReference: {fileID: 723621677}
+    - target: {fileID: 4359029730726388831, guid: db130c0141ed88c448ab93666d596311, type: 3}
+      propertyPath: _moneySystem
+      value: 
+      objectReference: {fileID: 723621677}
     - target: {fileID: 4513533667458105589, guid: db130c0141ed88c448ab93666d596311, type: 3}
       propertyPath: m_Name
       value: Button Base
       objectReference: {fileID: 0}
+    - target: {fileID: 5549883854279680969, guid: db130c0141ed88c448ab93666d596311, type: 3}
+      propertyPath: _moneySystem
+      value: 
+      objectReference: {fileID: 723621677}
+    - target: {fileID: 5647644623801995332, guid: db130c0141ed88c448ab93666d596311, type: 3}
+      propertyPath: _moneySystem
+      value: 
+      objectReference: {fileID: 723621677}
+    - target: {fileID: 5923658892040250156, guid: db130c0141ed88c448ab93666d596311, type: 3}
+      propertyPath: _moneySystem
+      value: 
+      objectReference: {fileID: 723621677}
+    - target: {fileID: 5943302173849189706, guid: db130c0141ed88c448ab93666d596311, type: 3}
+      propertyPath: _moneySystem
+      value: 
+      objectReference: {fileID: 723621677}
+    - target: {fileID: 6113967162356954918, guid: db130c0141ed88c448ab93666d596311, type: 3}
+      propertyPath: _moneySystem
+      value: 
+      objectReference: {fileID: 723621677}
     - target: {fileID: 6135758224952352292, guid: db130c0141ed88c448ab93666d596311, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -1457,6 +1536,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7726286474087556741, guid: db130c0141ed88c448ab93666d596311, type: 3}
+      propertyPath: _moneySystem
+      value: 
+      objectReference: {fileID: 723621677}
+    - target: {fileID: 7978213341052613686, guid: db130c0141ed88c448ab93666d596311, type: 3}
+      propertyPath: _moneySystem
+      value: 
+      objectReference: {fileID: 723621677}
+    - target: {fileID: 8602404970784674387, guid: db130c0141ed88c448ab93666d596311, type: 3}
+      propertyPath: _moneySystem
+      value: 
+      objectReference: {fileID: 723621677}
+    - target: {fileID: 8723382011485433852, guid: db130c0141ed88c448ab93666d596311, type: 3}
+      propertyPath: _moneySystem
+      value: 
+      objectReference: {fileID: 723621677}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db130c0141ed88c448ab93666d596311, type: 3}
 --- !u!1001 &6612831928635448341

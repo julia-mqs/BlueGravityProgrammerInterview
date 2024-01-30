@@ -11,7 +11,7 @@ public class MoneySystem : MonoBehaviour
     [SerializeField] private Text _addedMoneyFeedback;
 
     private IEnumerator _removeFeedback;
-    public static int totalMoney { get; internal set; }
+    internal int totalMoney { get; private set; }
 
     #endregion
 
@@ -70,6 +70,13 @@ public class MoneySystem : MonoBehaviour
     internal void AddMoney(int amount)
     {
         totalMoney += amount;
+        UpdateMoney();
+        ShowMoneyFeedback(true, amount);
+    }
+
+    internal void RemoveMoney(int amount)
+    {
+        totalMoney -= amount;
         UpdateMoney();
         ShowMoneyFeedback(true, amount);
     }

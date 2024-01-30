@@ -15,3 +15,4 @@ MonoBehaviour:
   _itemCost: 900
   _itemSprite: {fileID: 21300000, guid: 7db7af78e8f9c45418a407bdd7958560, type: 3}
   _itemUnlocked: 0
+  _unlockedByDefault: 0

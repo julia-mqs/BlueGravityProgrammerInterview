@@ -14,24 +14,56 @@ public class ItemInfos : MonoBehaviour
     [SerializeField] private GameObject _redOverlay;
     [SerializeField] private GameObject _goldCoin;
     [SerializeField] private Text _goldCost;
+    [Space]
+    [SerializeField] private MoneySystem _moneySystem;
+    [SerializeField] private AllPlayerItemButtons _allPlayerItemButtons;
 
     #endregion
 
     #region Messages
 
-    private void Start()
+    private void OnEnable()
     {
         Nullchecks();
 
         if (_itemData == null)
             return;
 
-        UpdateButton();
+        if (_button)
+            _button.onClick.AddListener(ButtonActionInMenu);
+
+        StartCoroutine(UpdateButtonAfterAFrame());
+    }
+
+    private void OnDisable()
+    {
+        if (_button)
+            _button.onClick.RemoveListener(ButtonActionInMenu);
     }
 
     #endregion
 
     #region Methods
+
+    private void ButtonActionInMenu()
+    {
+        if (MenusManager.setActiveMenu == ActiveMenu.Store)
+            BuyItem();
+        else
+            Debug.Log("wip");
+    }
+
+    private void BuyItem()
+    {
+        if (!_itemData.ItemUnlocked && _moneySystem.totalMoney >= _itemData.ItemCost)
+        {
+            _itemData.UnlockPlayerItem();
+            _moneySystem.RemoveMoney(_itemData.ItemCost);
+            _allPlayerItemButtons.UpdateAllButtons();
+        }
+        else
+            Debug.Log("Invalid Action (Not enough money or item already unlocked)");
+    }
 
     private void UpdateButton()
     {
@@ -43,10 +75,19 @@ public class ItemInfos : MonoBehaviour
             UpdateWardrobeInfos();
     }
 
-    private void UpdateStoreInfos()
+    private IEnumerator UpdateButtonAfterAFrame()
     {
-        //initially...
-        _redOverlay.SetActive(false);
+        yield return new WaitForFixedUpdate();
+
+        UpdateButton();
+    }
+
+    internal void UpdateStoreInfos()
+    {
+        if (!_itemData.ItemUnlocked && _moneySystem.totalMoney < _itemData.ItemCost)
+            _redOverlay.SetActive(true);
+        else
+            _redOverlay.SetActive(false);
 
         if (_itemData.ItemUnlocked == false)
         {
@@ -95,6 +136,12 @@ public class ItemInfos : MonoBehaviour
 
         if (_goldCost == null)
             Debug.Log("Gold Cost object is empty in: " + this.gameObject);
+
+        if (_moneySystem == null)
+            Debug.Log("Money System script is empty in: " + this.gameObject);
+
+        if (_allPlayerItemButtons == null)
+            Debug.Log("All Player Item Buttons script is empty in: " + this.gameObject);
     }
 
     #endregion
