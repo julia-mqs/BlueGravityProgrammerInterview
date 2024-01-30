@@ -57,6 +57,9 @@ public class MenusManager : MonoBehaviour
             case PickupItemTypeEnum.Ring:
                 InputTextUpdater("PICK RING\n(press P)");
                 break;
+            case PickupItemTypeEnum.Scroll:
+                InputTextUpdater("PICK SCROLL\n(press P)");
+                break;
             default:
                 break;
         }

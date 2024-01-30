@@ -123,7 +123,8 @@ public enum PickupItemTypeEnum
     Crown,
     Diamond, 
     Hat,
-    Ring
+    Ring,
+    Scroll
 }
 
 #endregion

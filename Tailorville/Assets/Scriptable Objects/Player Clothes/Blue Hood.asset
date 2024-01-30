@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Blue Hood
   m_EditorClassIdentifier: 
   _itemCost: 400
-  _itemSprite: {fileID: 21300000, guid: 20eb058aea3c3a744bb5d47a1610550a, type: 3}
-  _itemUnlocked: 0
+  _itemSprite: {fileID: 21300000, guid: ae2d3e3bacfacde4981510b116293dba, type: 3}
+  _itemUnlocked: 1
   _unlockedByDefault: 0
   _itemSlot: 1
