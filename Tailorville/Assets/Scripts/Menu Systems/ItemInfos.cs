@@ -50,7 +50,23 @@ public class ItemInfos : MonoBehaviour
         if (MenusManager.setActiveMenu == ActiveMenu.Store)
             BuyItem();
         else
-            Debug.Log("wip");
+        {
+            Sprite newSprite = _itemData.ItemSprite;
+
+            switch (_itemData.ItemSlot)
+            {
+                case ItemSlot.Face:
+                    _allPlayerItemButtons._previewClothes.UpdatePreviewFace(newSprite);
+                    _allPlayerItemButtons._playerClothes.UpdatePlayerFace(newSprite);
+                    break;
+                case ItemSlot.Hood:
+                    _allPlayerItemButtons._previewClothes.UpdatePreviewHood(newSprite);
+                    _allPlayerItemButtons._playerClothes.UpdatePlayerHood(newSprite);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     private void BuyItem()

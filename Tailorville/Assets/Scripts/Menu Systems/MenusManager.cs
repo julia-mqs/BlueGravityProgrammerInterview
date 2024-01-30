@@ -36,7 +36,7 @@ public class MenusManager : MonoBehaviour
     internal void ShowInput(MenuTypeEnum menu)
     {
         if (menu == MenuTypeEnum.Store)
-            InputTextUpdater("OPEN STORE\n(press O)");
+            InputTextUpdater("OPEN HAT SHOP\n(press O)");
         else
             InputTextUpdater("OPEN WARDROBE\n(press O)");
     }

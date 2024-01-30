@@ -8,6 +8,10 @@ public class AllPlayerItemButtons : MonoBehaviour
 
     [SerializeField] private List<ItemInfos> _allPlayerItemButtons = new List<ItemInfos>();
 
+    [Header("For easy access")]
+    [SerializeField] internal UpdatePlayerClothes _playerClothes;
+    [SerializeField] internal UpdatePreviewClothes _previewClothes;
+
     #endregion
 
     #region Methods

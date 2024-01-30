@@ -16,3 +16,4 @@ MonoBehaviour:
   _itemSprite: {fileID: 21300000, guid: 04f6c40e52535b941b42e11550f9cb8c, type: 3}
   _itemUnlocked: 0
   _unlockedByDefault: 0
+  _itemSlot: 1

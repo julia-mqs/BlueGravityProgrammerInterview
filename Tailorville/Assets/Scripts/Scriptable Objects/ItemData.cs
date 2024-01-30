@@ -11,6 +11,7 @@ public class ItemData : ScriptableObject
     [SerializeField] private Sprite _itemSprite;
     [SerializeField] private bool _itemUnlocked;
     [SerializeField] private bool _unlockedByDefault;
+    [SerializeField] private ItemSlot _itemSlot;
 
     #endregion
 
@@ -19,6 +20,7 @@ public class ItemData : ScriptableObject
     internal int ItemCost => _itemCost;
     internal Sprite ItemSprite => _itemSprite;
     internal bool ItemUnlocked => _itemUnlocked;
+    internal ItemSlot ItemSlot => _itemSlot;
 
     #endregion
 
@@ -40,3 +42,12 @@ public class ItemData : ScriptableObject
     #endregion
 }
 
+#region Enum
+
+public enum ItemSlot
+{
+    Face,
+    Hood
+}
+
+#endregion
