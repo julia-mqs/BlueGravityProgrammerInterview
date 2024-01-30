@@ -9,9 +9,14 @@ public class MenusManager : MonoBehaviour
 
     [SerializeField] private GameObject _storeMenu;
     [SerializeField] private GameObject _wardrobeMenu;
-
+    [Space]
     [SerializeField] private GameObject _inputHUD;
     [SerializeField] private Text _inputText;
+    [Space]
+    [SerializeField] private AudioSource _bgMusicSource;
+    [SerializeField] private AudioClip _villageMusic;
+    [SerializeField] private AudioClip _hatShopMusic;
+    [SerializeField] private AudioClip _wardrobeMusic;
 
     public static GameMode setGameMode { get; private set; }
     public static ActiveMenu setActiveMenu { get; private set; }
@@ -77,11 +82,13 @@ public class MenusManager : MonoBehaviour
         {
             ActivateGameObject(_storeMenu);
             setActiveMenu = ActiveMenu.Store;
+            PlaySFX(_hatShopMusic);
         }
         else
         {
             ActivateGameObject(_wardrobeMenu);
             setActiveMenu = ActiveMenu.Wardrobe;
+            PlaySFX(_wardrobeMusic);
         }
 
         setGameMode = GameMode.InMenu;
@@ -105,6 +112,7 @@ public class MenusManager : MonoBehaviour
         DeactivateGameObject(_wardrobeMenu);
 
         setGameMode = GameMode.Playing;
+        PlaySFX(_villageMusic);
     }
 
     internal void DeactivateInputHUD()
@@ -125,6 +133,12 @@ public class MenusManager : MonoBehaviour
 
         if (_inputText == null)
             Debug.Log("Input Text object is empty in: " + this.gameObject);
+    }
+
+    private void PlaySFX(AudioClip sfx)
+    {
+        _bgMusicSource.clip = sfx;
+        _bgMusicSource.Play();
     }
 
     #endregion

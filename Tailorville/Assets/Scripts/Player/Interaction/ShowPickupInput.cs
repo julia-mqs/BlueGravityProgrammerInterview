@@ -8,6 +8,9 @@ public class ShowPickupInput : MonoBehaviour
 
     [SerializeField] private PickupItemData _pickupItemData;
     [Space]
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _onPickItemSFX;
+    [Space]
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private MenusManager _menuManager;
     [SerializeField] private MoneySystem _moneySystem;
@@ -77,10 +80,13 @@ public class ShowPickupInput : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
+            PlaySFX(_onPickItemSFX);
+
             if (_moneySystem)
                 _moneySystem.AddMoney(this._pickupItemData.AmountGained);
             else
                 Debug.Log("Pickup Item Data is empty in: " + this.gameObject);
+            
             this.gameObject.SetActive(false);
         }
     }
@@ -111,6 +117,12 @@ public class ShowPickupInput : MonoBehaviour
             return;
         }
         _menuManager.DeactivateInputHUD();
+    }
+
+    private void PlaySFX(AudioClip sfx)
+    {
+        _audioSource.clip = sfx;
+        _audioSource.Play();
     }
 
     #endregion

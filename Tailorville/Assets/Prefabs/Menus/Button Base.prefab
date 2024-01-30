@@ -441,6 +441,7 @@ GameObject:
   - component: {fileID: 7029185987999092081}
   - component: {fileID: 6592283669606887348}
   - component: {fileID: 8777590821777174198}
+  - component: {fileID: 8763477234585718396}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -550,6 +551,35 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8763477234585718396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8893150114373556110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3338049623161961880}
+          m_TargetAssemblyTypeName: ItemInfos, Assembly-CSharp
+          m_MethodName: OnSelectButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &9099565128555399515
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,8 +636,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 8777590821777174198}
+  _audioSource: {fileID: 0}
+  _onHoverSFX: {fileID: 8300000, guid: e7992d172691ce147bde04a9ea103f2c, type: 3}
+  _onClickPositiveSFX: {fileID: 8300000, guid: 00b18e15346f38a4e8535ac98e4ac9ee, type: 3}
+  _onClickNegativeSFX: {fileID: 8300000, guid: 2ebf2421dddc15a45b7fc6ae8197b1c0, type: 3}
   _itemData: {fileID: 0}
   _itemSprite: {fileID: 5648455007024146599}
   _redOverlay: {fileID: 4880138995475270199}
   _goldCoin: {fileID: 8810876857770795357}
   _goldCost: {fileID: 5289740120702131322}
+  _moneySystem: {fileID: 0}
+  _allPlayerItemButtons: {fileID: 0}

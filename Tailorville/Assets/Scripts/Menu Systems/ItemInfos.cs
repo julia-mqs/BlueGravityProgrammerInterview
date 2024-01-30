@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class ItemInfos : MonoBehaviour
 {
     #region Variables
 
     [SerializeField] private Button _button;
+    [Space]
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _onHoverSFX;
+    [SerializeField] private AudioClip _onClickPositiveSFX;
+    [SerializeField] private AudioClip _onClickNegativeSFX;
     [Space]
     [SerializeField] private ItemData _itemData;
     [SerializeField] private Image _itemSprite;
@@ -52,6 +58,7 @@ public class ItemInfos : MonoBehaviour
         else
         {
             Sprite newSprite = _itemData.ItemSprite;
+            PlaySFX(_onClickPositiveSFX);
 
             switch (_itemData.ItemSlot)
             {
@@ -76,9 +83,18 @@ public class ItemInfos : MonoBehaviour
             _itemData.UnlockPlayerItem();
             _moneySystem.RemoveMoney(_itemData.ItemCost);
             _allPlayerItemButtons.UpdateAllButtons();
+            PlaySFX(_onClickPositiveSFX);
         }
         else
+        {
+            PlaySFX(_onClickNegativeSFX);
             Debug.Log("Invalid Action (Not enough money or item already unlocked)");
+        }
+    }
+
+    public void OnSelectButton()
+    {
+        PlaySFX(_onHoverSFX);
     }
 
     private void UpdateButton()
@@ -131,6 +147,12 @@ public class ItemInfos : MonoBehaviour
             _redOverlay.SetActive(false);
             _goldCost.text = "";
         }
+    }
+
+    private void PlaySFX(AudioClip sfx)
+    {
+        _audioSource.clip = sfx;
+        _audioSource.Play();
     }
 
     private void Nullchecks()
