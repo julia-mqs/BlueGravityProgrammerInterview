@@ -26,14 +26,6 @@ public class MoneySystem : MonoBehaviour
 
     #endregion
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            AddMoney(30);
-        }
-    }
-
     #region Methods
 
     private void UpdateMoney()
