@@ -36,15 +36,36 @@ public class MenusManager : MonoBehaviour
     internal void ShowInput(MenuTypeEnum menu)
     {
         if (menu == MenuTypeEnum.Store)
-        {
-            ActivateGameObject(_inputHUD);
-            _inputText.text = "OPEN STORE\n(press O)";
-        }
+            InputTextUpdater("OPEN STORE\n(press O)");
         else
+            InputTextUpdater("OPEN WARDROBE\n(press O)");
+    }
+
+    internal void ShowPickupInput(PickupItemTypeEnum pickup)
+    {
+        switch (pickup)
         {
-            ActivateGameObject(_inputHUD);
-            _inputText.text = "OPEN WARDROBE\n(press O)";
+            case PickupItemTypeEnum.Crown:
+                InputTextUpdater("PICK CROWN\n(press P)");
+                break;
+            case PickupItemTypeEnum.Diamond:
+                InputTextUpdater("PICK DIAMOND\n(press P)");
+                break;
+            case PickupItemTypeEnum.Hat:
+                InputTextUpdater("PICK HAT\n(press P)");
+                break;
+            case PickupItemTypeEnum.Ring:
+                InputTextUpdater("PICK RING\n(press P)");
+                break;
+            default:
+                break;
         }
+    }
+
+    private void InputTextUpdater(string text)
+    {
+        ActivateGameObject(_inputHUD);
+        _inputText.text = text;
     }
 
     internal void OpenMenu(MenuTypeEnum menu)

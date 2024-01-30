@@ -544,7 +544,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3042363063199240080, guid: 34cc7bb791867ed4f997f1c60518f61c, type: 3}
       propertyPath: m_Name
-      value: Button Mask
+      value: Button Base
       objectReference: {fileID: 0}
     - target: {fileID: 3343012098168746808, guid: 34cc7bb791867ed4f997f1c60518f61c, type: 3}
       propertyPath: m_RootOrder

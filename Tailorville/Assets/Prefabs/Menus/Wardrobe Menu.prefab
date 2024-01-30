@@ -266,7 +266,7 @@ RectTransform:
   - {fileID: 8574735408152233564}
   - {fileID: 5901303527047500499}
   - {fileID: 8059679376061025883}
-  - {fileID: 4335042436900007538}
+  - {fileID: 2542506993436352438}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -599,11 +599,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2265261684041884670, guid: 1de74e06f3b534c41856496309956bbb, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1de74e06f3b534c41856496309956bbb, type: 3}
---- !u!4 &4335042436900007538 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4000010141028922, guid: 1de74e06f3b534c41856496309956bbb, type: 3}
+--- !u!224 &2542506993436352438 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2265261684041884670, guid: 1de74e06f3b534c41856496309956bbb, type: 3}
   m_PrefabInstance: {fileID: 4334468197029182536}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4737074849695317347
@@ -615,7 +619,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3042363063199240080, guid: 34cc7bb791867ed4f997f1c60518f61c, type: 3}
       propertyPath: m_Name
-      value: Button Mask
+      value: Button Base
       objectReference: {fileID: 0}
     - target: {fileID: 3343012098168746808, guid: 34cc7bb791867ed4f997f1c60518f61c, type: 3}
       propertyPath: m_RootOrder

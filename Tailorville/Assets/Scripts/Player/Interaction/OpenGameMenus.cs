@@ -45,6 +45,12 @@ public class OpenGameMenus : MonoBehaviour
         if (!this._playerInArea)
             return;
 
+        if (_menuManager == null)
+        {
+            Debug.Log("Menu Manager object is empty in: " + this.gameObject);
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.O))
         {
             _menuManager.OpenMenu(this._menuType);
@@ -64,6 +70,11 @@ public class OpenGameMenus : MonoBehaviour
     {
         this._playerInArea = true;
 
+        if (_menuManager == null)
+        {
+            Debug.Log("Menu Manager object is empty in: " + this.gameObject);
+            return;
+        }
         _menuManager.ShowInput(type);
     }
 
@@ -71,6 +82,11 @@ public class OpenGameMenus : MonoBehaviour
     {
         this._playerInArea = false;
 
+        if (_menuManager == null)
+        {
+            Debug.Log("Menu Manager object is empty in: " + this.gameObject);
+            return;
+        }
         _menuManager.DeactivateInputHUD();
     }
 
